@@ -11,8 +11,8 @@ var scraper = require('./lib/scraper.js'),
 var check = function (restaurantId, date, time){
     scraper('http://www.opentable.co.uk/opentables.aspx?t=Single&rid=' + restaurantId + '&m=3131&p=4&d=' + date + '%20' + time + '&rtype=ism', function(json){
         smtpTransport.sendMail({
-           from: 'matt@matt-reid.co.uk',
-           to: "matt@matt-reid.co.uk",
+           from: 'YOUR EMAIL HERE',
+           to: "YOUR EMAIL HERE",
            subject: "OpenTable Reservation Times",
            text: JSON.stringify(json)
         }, function(error, response){
